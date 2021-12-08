@@ -1,21 +1,15 @@
-const mysql = require('mysql');
+const mysql = require('promise-mysql');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'nutricare_app'
-});
-
-const getConnection = () => {
-    connection.connect(function(err) {
-        if (err) {
-          console.error('error connecting: ' +err);
-          return;
-        }
-        console.log('successful connection: ' + connection.threadId);
+const getConnection = async () => {
+    const connection = await mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: '1234',
+        database: 'nutricare_app'
     });
-    return connection;
-}
 
-module.exports = { getConnection }
+    console.log('successful connection: ' + connection.threadId);
+    return connection;
+};
+
+module.exports = { getConnection };
