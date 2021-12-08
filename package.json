@@ -1,0 +1,20 @@
+{
+  "name": "nutricare-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^16.0.4"
+  },
+  "dependencies": {
+    "electron-reload": "^2.0.0-alpha.1",
+    "mysql": "^2.18.1",
+    "promise-mysql": "^5.0.4"
+  }
+}
